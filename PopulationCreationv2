@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct 22 13:23:02 2019
+
+@author: LJ
+"""
+
+"""
+Beginning of World:
+0
+Current Year:
+6023
+Current Population:
+7.7 billion
+Current Rate of Growth:
+Doubles every 61 years
+
+Use this calculator to estimate whether population can increase at a rate congruent with the Bible, whether the Mormons have time to save every soul before Judgment Day, and more.
+
+Change the values below to explore.
+"""
+population = 8000
+"""
+Number of people in population at starting year, currently set to number of people who survived the Flood (8)
+"""
+amount_pop_mult = .5
+"""
+The population doubles.
+Note you can change this to another number.
+"""
+time_to_double = 127
+"""
+How long it takes the population to double, currently based on the time it took the world population to double from
+1 billion to 2 billion between 1800 and 1927. (127)
+"""
+year_start = 1656 
+"""
+year to begin counting- currently set to date of Flood (1656 AM)
+"""
+year_end = 6023 
+"""
+current years from Genesis 1.
+Try setting other dates, like year_start = 4004 (Jesus) and year_end = 6023
+"""
+years = year_end-year_start
+print(" ")
+print("Population growth over " + str(years) + " years, beginning with a population of "\
+       + str(population) + " that increases " + str(amount_pop_mult) \
+       + " times every " + str(time_to_double) + " years:")
+
+growth_rate = population/population * amount_pop_mult
+iterations = years/time_to_double
+
+
+
+for doubling in range(years//time_to_double):
+      if int(population) <= 0: 
+          print("It seems like everyone died somehow.")
+          break 
+      population *= growth_rate 
+      print(f'{int(population):,}')
+     
+     
+#World pop estimate for Jesus' time: 150 million to 400 million.
+#Roman Empire pop estimate for Jesus' time: 45 million.
+#World pop before Black Death: 475 million; after: 350-375 million; time to return to 475 million: 200 years
+#Fastest time to double recorded: 49 years.
